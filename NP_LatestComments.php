@@ -64,7 +64,7 @@ class NP_LatestComments extends NucleusPlugin {
 	
 	//<mod by PiyoPiyoNaku>
 	function init() {
-		$language = ereg_replace( '[\\|/]', '', getLanguageName());
+		$language = str_replace( array('\\','/'), '', getLanguageName());
 		if ($language == "japanese-utf8")
 		{
 			define(_LCOM_DESC,				'最新のコメントを表示するプラグイン。 スキンへの記述： &lt;%LatestComments%&gt;');
@@ -302,7 +302,7 @@ class NP_LatestComments extends NucleusPlugin {
 				$relative_pos = 0;
 				while ($relative_pos < $numberOfCharacters) {
 				      // get te position of the next tag (using next < instead of [)
-				      $result = preg_match($bbcode_regexp, $text, &$matches, PREG_OFFSET_CAPTURE, $real_pos);
+				      $result = preg_match($bbcode_regexp, $text, $matches, PREG_OFFSET_CAPTURE, $real_pos);
 				      $nextlt = (isset($matches[0][1]) ? $matches[0][1] : false);
 
 				      if ($nextlt === false) {
@@ -351,8 +351,8 @@ class NP_LatestComments extends NucleusPlugin {
 					$bbcode_regexp_array["/\[youtube\]/"] = "youtube";
 
 					foreach ($bbcode_regexp_array as $regexp => $bbtag) {
-					      $num_opening_tags = preg_match_all($regexp,$ctext, &$fubar);
-					      $num_closing_tags = preg_match_all("/\[\/".$bbtag."\]/", $ctext, &$fubar);
+					      $num_opening_tags = preg_match_all($regexp,$ctext, $fubar);
+					      $num_closing_tags = preg_match_all("/\[\/".$bbtag."\]/", $ctext, $fubar);
 
 					      if ($num_closing_tags < $num_opening_tags) {
 						      for ($i = $num_opening_tags - $num_closing_tags;$i > 0; $i--) {
