@@ -67,41 +67,41 @@ class NP_LatestComments extends NucleusPlugin {
 		$language = str_replace( array('\\','/'), '', getLanguageName());
 		if ($language == "japanese-utf8")
 		{
-			define(_LCOM_DESC,				'最新のコメントを表示するプラグイン。 スキンへの記述： &lt;%LatestComments%&gt;');
-			define(_LCOM_OPTHEAD,			'コメントの一覧のヘッダ。デフォルトは 「&lt;ul&gt;」');
-			define(_LCOM_OPTFORMAT,			'コメント一覧の本体。デフォルトは 「&lt;li&gt;&lt;a href="%l" title="Posts to: %p"&gt;%u&lt;/a&gt; says %c&lt;/li&gt;」');
-			define(_LCOM_OPTFORMATEVEN,		'Comment formatting (even comments). Defaults to comment format odd/all');
-			define(_LCOM_OPTFOOT,			'コメントの一覧のフッタ。デフォルトは 「&lt;/ul&gt;」');
-			define(_LCOM_DATEFORMAT,			'日付の形式。デフォルトは 「Y-m-d H:i:s」');
-			define(_LCOM_OPTNOCOMMENTS,		'Message when there are no comments. Default: No comments yet');
-			define(_LCOM_OPT1,				'ディスプレイ名はメンバー短縮名？デフォルトは 「はい」');
-			define(_LCOM_OPT2,				'1コメント中に表示するキャラクターの数。デフォルトは 「85」');
-			define(_LCOM_OPT3,				'ワードの終わりにコメントはブレイクするですか？デフォルトは 「はい」');
-			define(_LCOM_OPT4,				'ディスプレイ名のキャラクターの数。デフォルトは 「15」');
-			define(_LCOM_OPT5,				'Max characters of display title. Default is 22');
-			define(_LCOM_OPT6,				'Append ... to shortened name. Default = yes');	
-                        define(_LCOM_USEMARKUP,				'Use markup in comments (BBCode) (Default = no)');
-			define(_LCOM_REPLACEIMG,			'Replace bbcode images by (leave empty te keep images)');
-			define(_LCOM_REPLACEYOUTUBE,			'Replace bbcode youtube movies by (leave empty te keep movie)');
+			define('_LCOM_DESC',			'最新のコメントを表示するプラグイン。 スキンへの記述： &lt;%LatestComments%&gt;');
+			define('_LCOM_OPTHEAD',			'コメントの一覧のヘッダ。デフォルトは 「&lt;ul&gt;」');
+			define('_LCOM_OPTFORMAT',		'コメント一覧の本体。デフォルトは 「&lt;li&gt;&lt;a href="%l" title="Posts to: %p"&gt;%u&lt;/a&gt; says %c&lt;/li&gt;」');
+			define('_LCOM_OPTFORMATEVEN',	'Comment formatting (even comments). Defaults to comment format odd/all');
+			define('_LCOM_OPTFOOT',			'コメントの一覧のフッタ。デフォルトは 「&lt;/ul&gt;」');
+			define('_LCOM_DATEFORMAT',		'日付の形式。デフォルトは 「Y-m-d H:i:s」');
+			define('_LCOM_OPTNOCOMMENTS',	'Message when there are no comments. Default: No comments yet');
+			define('_LCOM_OPT1',			'ディスプレイ名はメンバー短縮名？デフォルトは 「はい」');
+			define('_LCOM_OPT2',			'1コメント中に表示するキャラクターの数。デフォルトは 「85」');
+			define('_LCOM_OPT3',			'ワードの終わりにコメントはブレイクするですか？デフォルトは 「はい」');
+			define('_LCOM_OPT4',			'ディスプレイ名のキャラクターの数。デフォルトは 「15」');
+			define('_LCOM_OPT5',			'Max characters of display title. Default is 22');
+			define('_LCOM_OPT6',			'Append ... to shortened name. Default = yes');
+			define('_LCOM_USEMARKUP',		'Use markup in comments (BBCode) (Default = no)');
+			define('_LCOM_REPLACEIMG',		'Replace bbcode images by (leave empty te keep images)');
+			define('_LCOM_REPLACEYOUTUBE',	'Replace bbcode youtube movies by (leave empty te keep movie)');
 		}
 		else
 		{
-			define(_LCOM_DESC,				'This plugin can be used to display the last few comments. Skinvar: &lt;%LatestComments%&gt;');
-			define(_LCOM_OPTHEAD,			'Header formatting. Default is &lt;ul&gt;');
-			define(_LCOM_OPTFORMAT,			'Comment formatting (odd / all comments). Default is <li><a href="%l" title="Posts to: %P">%U</a> says %c</li>');
-			define(_LCOM_OPTFORMATEVEN,		'Comment formatting (even comments). Defaults to comment format odd/all');
-			define(_LCOM_OPTFOOT,			'Footer formatting. Default is &lt;/ul&gt;');
-			define(_LCOM_DATEFORMAT,		'Date format. Default is Y-m-d H:i:s');
-			define(_LCOM_OPTNOCOMMENTS,		'Message when there are no comments. Default: No comments yet');
-			define(_LCOM_OPT1,				'Display name is short member name? Default is Yes');
-			define(_LCOM_OPT2,				'Max characters in each comment. Default is 85');
-			define(_LCOM_OPT3,				'Break comment at the end of the word? Default is Yes');
-			define(_LCOM_OPT4,				'Max characters of display name. Default is 15');
-			define(_LCOM_OPT5,				'Max characters of display title. Default is 22');
-			define(_LCOM_OPT6,				'Append ... to shortened name. Default = yes');	
-                        define(_LCOM_USEMARKUP,				'Use markup in comments (BBCode) (Default = no)');
-			define(_LCOM_REPLACEIMG,			'Replace bbcode images by (leave empty te keep images)');
-			define(_LCOM_REPLACEYOUTUBE,			'Replace bbcode youtube movies by (leave empty te keep movie)');
+			define('_LCOM_DESC',			'This plugin can be used to display the last few comments. Skinvar: &lt;%LatestComments%&gt;');
+			define('_LCOM_OPTHEAD',			'Header formatting. Default is &lt;ul&gt;');
+			define('_LCOM_OPTFORMAT',		'Comment formatting (odd / all comments). Default is <li><a href="%l" title="Posts to: %P">%U</a> says %c</li>');
+			define('_LCOM_OPTFORMATEVEN',	'Comment formatting (even comments). Defaults to comment format odd/all');
+			define('_LCOM_OPTFOOT',			'Footer formatting. Default is &lt;/ul&gt;');
+			define('_LCOM_DATEFORMAT',		'Date format. Default is Y-m-d H:i:s');
+			define('_LCOM_OPTNOCOMMENTS',	'Message when there are no comments. Default: No comments yet');
+			define('_LCOM_OPT1',			'Display name is short member name? Default is Yes');
+			define('_LCOM_OPT2',			'Max characters in each comment. Default is 85');
+			define('_LCOM_OPT3',			'Break comment at the end of the word? Default is Yes');
+			define('_LCOM_OPT4',			'Max characters of display name. Default is 15');
+			define('_LCOM_OPT5',			'Max characters of display title. Default is 22');
+			define('_LCOM_OPT6',			'Append ... to shortened name. Default = yes');	
+			define('_LCOM_USEMARKUP',		'Use markup in comments (BBCode) (Default = no)');
+			define('_LCOM_REPLACEIMG',		'Replace bbcode images by (leave empty te keep images)');
+			define('_LCOM_REPLACEYOUTUBE',	'Replace bbcode youtube movies by (leave empty te keep movie)');
 		}
 	}
 	//</mod by PiyoPiyoNaku>
